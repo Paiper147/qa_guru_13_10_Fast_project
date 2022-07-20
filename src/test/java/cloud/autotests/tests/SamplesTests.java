@@ -8,7 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.WebDriverRunner.url;
+import static com.codeborne.selenide.WebDriverConditions.url;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -50,8 +50,7 @@ public class SamplesTests extends TestBase {
         });
 
         step("Is the main page opened", () -> {
-            String url = url();
-            assertThat(url).isEqualTo(BASE_URL);
+            webdriver().shouldHave(url(BASE_URL));
         });
     }
 
@@ -74,8 +73,7 @@ public class SamplesTests extends TestBase {
         });
 
         step("Is Eng page opened", () -> {
-            String url = url();
-            assertThat(url).isEqualTo(BASE_URL + "en/glavnaya/");
+            webdriver().shouldHave(url(BASE_URL + "en/glavnaya/"));
         });
 
         step("Check the text of RU button", () -> {
@@ -87,8 +85,7 @@ public class SamplesTests extends TestBase {
         });
 
         step("Is RU page opened", () -> {
-            String url = url();
-            assertThat(url).isEqualTo(BASE_URL);
+            webdriver().shouldHave(url(BASE_URL));
         });
     }
 
