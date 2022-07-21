@@ -67,8 +67,8 @@ tasks.withType(Test) {
     }
 }
 
-task demowebshop(type: Test) {
+task sampleTests_test(type: Test) {
     useJUnitPlatform {
-        includeTags 'demowebshop'
+        includeTags 'sampleTests'
     }
 }

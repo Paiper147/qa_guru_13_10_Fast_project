@@ -5,6 +5,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -12,9 +13,8 @@ import static com.codeborne.selenide.WebDriverConditions.url;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
-
+@Tag("sampleTests")
 public class SamplesTests extends TestBase {
-
     final static String BASE_URL = "https://rtmis.ru/";
 
     @Test
@@ -133,8 +133,6 @@ public class SamplesTests extends TestBase {
                     .sibling(0).scrollTo()
                     .shouldHave(Condition.text(firstPerson));
         });
-
-
     }
 
     @Test
